@@ -13,3 +13,8 @@ class LegacyPaymentAdapter(PaymentProcessor):
 
     def pay(self, amount: float) -> str:
         return self._legacy.make_payment(amount, "USD")
+
+
+class StripePaymentProcessor(PaymentProcessor):
+    def pay(self, amount: float) -> str:
+        return f"Stripe charge: ${amount:.2f}"
