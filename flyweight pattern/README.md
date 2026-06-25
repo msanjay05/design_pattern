@@ -46,9 +46,19 @@ Avoid it when objects are few, state is mostly unique, or sharing adds unaccepta
 
 ## Related Patterns
 
-- **Singleton:** Flyweight factory often behaves like a controlled singleton pool
-- **Composite:** Flyweight leaves can be shared inside composite trees
-- **State:** Can share state objects similarly
+| Pattern | Difference |
+|---------|------------|
+| **Singleton** | Flyweight factory often behaves like a controlled pool of shared instances |
+| **Composite** | Flyweight leaves can be shared inside composite trees |
+| **State** | Can share state objects similarly, but State models behavior transitions |
+
+### Flyweight vs Singleton vs State
+
+| | Flyweight | Singleton | State |
+|---|-----------|-----------|-------|
+| **Shares** | Intrinsic data across many lightweight objects | One instance of a class | State objects representing phases |
+| **Goal** | Reduce memory for huge numbers of similar objects | Guarantee a single global instance | Change behavior via state transitions |
+| **Use when** | Thousands of trees, tiles, or characters share texture data | One config manager or connection pool | Finite state machines |
 
 ## Summary
 

@@ -149,6 +149,14 @@ Avoid it when:
 | **Prototype** | Creates objects by cloning existing instances instead of calling `new`/constructors |
 | **Singleton** | Ensures one instance exists; often used *inside* a factory but solves a different problem |
 
+### Factory Method vs Abstract Factory vs Builder
+
+| | Factory Method | Abstract Factory | Builder |
+|---|----------------|------------------|---------|
+| **Creates** | One product per factory subclass | Matched sets of related products | One complex object step by step |
+| **Client knows** | Which factory to use | Which product family to use | Builder API and final `build()` call |
+| **Use when** | Creation varies by subclass | Products must stay in the same theme/platform | Many optional parts and assembly steps |
+
 ## Summary
 
 The Factory pattern separates **object creation** from **object use**. Instead of sprinkling `new`/constructor calls and conditionals throughout your code, you delegate creation to a factory that returns products through a shared interface. That keeps your system flexible, testable, and easier to extend as new types are introduced.

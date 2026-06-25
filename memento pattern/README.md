@@ -48,9 +48,19 @@ Avoid it when state is huge, snapshots are frequent, or immutable data structure
 
 ## Related Patterns
 
-- **Command:** Undo often uses mementos to restore prior state
-- **State:** State objects can be saved as mementos
-- **Prototype:** Cloning is another way to duplicate state
+| Pattern | Difference |
+|---------|------------|
+| **Command** | Undo often uses mementos to restore prior state after executing a command |
+| **State** | State objects can be saved as mementos for rollback |
+| **Prototype** | Clones objects to create new instances; Memento restores existing instances |
+
+### Memento vs Prototype vs Command
+
+| | Memento | Prototype | Command |
+|---|---------|-----------|---------|
+| **Purpose** | Snapshot and restore object state | Copy an object to make a new one | Encapsulate an action with optional undo |
+| **Direction** | Backward in time (undo/restore) | Forward to new instances | Execute now, possibly reverse later |
+| **Use when** | Editors, games, transactional rollback | Expensive object setup | Action history, macros, queued jobs |
 
 ## Summary
 

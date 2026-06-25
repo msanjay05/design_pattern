@@ -49,9 +49,19 @@ Avoid it when the algorithm structure itself varies, or when composition (Strate
 
 ## Related Patterns
 
-- **Strategy:** Replaces algorithm via composition; Template Method varies steps via inheritance
-- **Factory Method:** Often used inside template steps to create objects
-- **Hook methods:** Optional override points in the template (not always required)
+| Pattern | Difference |
+|---------|------------|
+| **Strategy** | Replaces whole algorithms via composition; Template Method fixes skeleton steps via inheritance |
+| **Factory Method** | Often used inside template steps to create objects |
+| **Hook methods** | Optional override points in the template (not always required) |
+
+### Template Method vs Strategy
+
+| | Template Method | Strategy |
+|---|-----------------|----------|
+| **Mechanism** | Inheritance — subclasses override steps | Composition — context delegates to a strategy object |
+| **Structure** | Algorithm skeleton locked in base class | Entire algorithm swappable at runtime |
+| **Use when** | Shared workflow with a few customizable steps | Many interchangeable algorithms for one task |
 
 ## Summary
 

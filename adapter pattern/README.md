@@ -47,9 +47,19 @@ Avoid it when you own the code and can change the interface directly, or when th
 
 ## Related Patterns
 
-- **Facade:** Simplifies a subsystem; Adapter changes interface to match
-- **Decorator:** Adds behavior; Adapter changes interface
-- **Bridge:** Separates abstraction from implementation upfront
+| Pattern | Difference |
+|---------|------------|
+| **Facade** | Simplifies a whole subsystem behind one entry point; Adapter makes one incompatible interface fit another |
+| **Decorator** | Keeps the same interface and adds behavior; Adapter translates between different interfaces |
+| **Bridge** | Designs abstraction/implementation separation upfront; Adapter retrofits existing mismatches |
+
+### Adapter vs Facade vs Decorator
+
+| | Adapter | Facade | Decorator |
+|---|---------|--------|-----------|
+| **Changes** | Interface shape | Perceived complexity | Behavior (wraps and extends) |
+| **Target** | One incompatible component | Entire subsystem | One object, same interface |
+| **Use when** | Legacy or third-party API does not match yours | Clients need a simple API over many classes | You want optional, stackable features |
 
 ## Summary
 

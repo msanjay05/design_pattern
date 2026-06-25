@@ -46,9 +46,19 @@ Avoid it when operations are trivial one-liners with no need for queuing or reve
 
 ## Related Patterns
 
-- **Strategy:** Encapsulates algorithms; Command encapsulates requests with optional undo
-- **Memento:** Stores state for undo restoration
-- **Composite:** Commands can be grouped into macro commands
+| Pattern | Difference |
+|---------|------------|
+| **Strategy** | Encapsulates algorithms; Command encapsulates requests with optional undo and queuing |
+| **Memento** | Stores state snapshots for undo restoration |
+| **Composite** | Commands can be grouped into macro commands |
+
+### Command vs Strategy
+
+| | Command | Strategy |
+|---|---------|----------|
+| **Encapsulates** | A request or action (do, undo, queue) | An algorithm or way to perform a task |
+| **Extras** | History, undo/redo, macros, scheduling | Runtime algorithm swapping |
+| **Use when** | Toolbar actions, transaction logs, job queues | Payment methods, sorting, routing rules |
 
 ## Summary
 

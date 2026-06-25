@@ -47,9 +47,19 @@ Avoid it when notification order matters critically without extra design, or whe
 
 ## Related Patterns
 
-- **Mediator:** Central hub coordinates colleagues; Observer distributes from subject to many
-- **Publisher-Subscriber:** Often a distributed variant of Observer
-- **MVC:** Model notifies Views via Observer-style updates
+| Pattern | Difference |
+|---------|------------|
+| **Mediator** | Central hub coordinates colleagues; Observer distributes updates from one subject to many |
+| **Publisher-Subscriber** | Often a distributed, decoupled variant of Observer |
+| **MVC** | Model notifies Views via Observer-style updates |
+
+### Observer vs Mediator
+
+| | Observer | Mediator |
+|---|----------|----------|
+| **Flow** | Subject notifies many subscribers | Colleagues communicate through one coordinator |
+| **Coupling** | Observers subscribe to subject events | Colleagues avoid direct references to each other |
+| **Use when** | UI binding, domain events, reactive updates | Complex many-to-many workflows (chat, forms) |
 
 ## Summary
 

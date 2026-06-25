@@ -55,9 +55,22 @@ Avoid it when there are only one or two simple states, or when transitions are n
 
 ## Related Patterns
 
-- **Strategy:** Similar structure; Strategy is usually chosen externally and does not imply transitions
-- **Finite State Machine:** State pattern is the OOP expression of an FSM
-- **Command:** Can trigger state transitions
+| Pattern | Difference |
+|---------|------------|
+| **Strategy** | Same delegation structure, but Strategy swaps interchangeable algorithms chosen by the client; State models phases where the current state drives transitions |
+| **Finite State Machine** | State pattern is the OOP expression of an FSM |
+| **Command** | Can trigger state transitions as side effects of executing a request |
+
+### State vs Strategy
+
+Both patterns use a context delegating to objects behind a common interface. In this repo, compare `state.py` (vending machine) with `../strategy pattern/strategy.py` (checkout payments).
+
+| | State | Strategy |
+|---|-------|----------|
+| **Why** | Behavior depends on the object's current phase | Multiple ways to do the same job |
+| **Switching** | `IdleState` sets `machine.state = HasCoinState()` after an event | `checkout.set_strategy(PayPalPayment())` from outside |
+| **Coupling** | States know valid transitions | Strategies do not know about each other |
+| **Use when** | You have a state machine (orders, connections, workflows) | You have swappable algorithms (payment, routing, compression) |
 
 ## Summary
 

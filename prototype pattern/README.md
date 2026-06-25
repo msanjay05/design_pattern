@@ -45,9 +45,19 @@ Avoid it when objects are trivial to create or when shared references in a shall
 
 ## Related Patterns
 
-- **Factory:** Builds new instances from scratch
-- **Memento:** Saves/restores object state (different intent: history vs duplication)
-- **Builder:** Assembles objects step by step rather than copying
+| Pattern | Difference |
+|---------|------------|
+| **Factory** | Builds new instances from scratch via creation logic |
+| **Memento** | Saves/restores snapshots for history; Prototype copies to produce new instances |
+| **Builder** | Assembles objects step by step rather than duplicating an existing one |
+
+### Prototype vs Memento
+
+| | Prototype | Memento |
+|---|-----------|---------|
+| **Goal** | Create new objects by copying a template | Save and restore prior object state |
+| **Result** | A new instance (often modified after clone) | The same object rolled back to an earlier snapshot |
+| **Use when** | Setup is expensive and new objects resemble existing ones | You need undo, redo, or checkpoints |
 
 ## Summary
 

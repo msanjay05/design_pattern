@@ -49,9 +49,19 @@ Avoid it when the mediator becomes a monolithic "god object" absorbing too much 
 
 ## Related Patterns
 
-- **Observer:** Distributes events; Mediator orchestrates bidirectional communication
-- **Facade:** Simplifies subsystem access; Mediator manages ongoing interactions
-- **Command:** Colleagues can send command objects to the mediator
+| Pattern | Difference |
+|---------|------------|
+| **Observer** | Subject broadcasts changes to many listeners; Mediator routes bidirectional colleague communication |
+| **Facade** | Simplifies subsystem access; Mediator manages ongoing interactions between peers |
+| **Command** | Colleagues can send command objects through the mediator |
+
+### Mediator vs Observer vs Facade
+
+| | Mediator | Observer | Facade |
+|---|----------|----------|--------|
+| **Communication** | Colleagues talk only through the hub | One-to-many notification from subject | Client calls one simplified API |
+| **Coupling** | Reduces direct colleague references | Subscribers depend on subject events | Hides subsystem complexity |
+| **Use when** | Chat rooms, air traffic control, UI dialogs | Model-view updates, event buses | Bootstrapping a complex library |
 
 ## Summary
 

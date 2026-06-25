@@ -49,9 +49,19 @@ Avoid it when the structure is flat or when leaf and composite behavior diverges
 
 ## Related Patterns
 
-- **Decorator:** Similar recursive structure but adds behavior; Composite groups children
-- **Iterator:** Often used to traverse composite trees
-- **Visitor:** Adds operations across composite structures
+| Pattern | Difference |
+|---------|------------|
+| **Decorator** | Similar tree structure but wraps one object to add behavior; Composite groups children into a part-whole tree |
+| **Iterator** | Traverses composite trees without exposing internal structure |
+| **Visitor** | Adds operations across the tree without changing element classes |
+
+### Composite vs Decorator
+
+| | Composite | Decorator |
+|---|-----------|-----------|
+| **Structure** | Tree of children (leaves and containers) | Single wrapper chain around one object |
+| **Intent** | Treat one item and a group uniformly | Add responsibilities dynamically |
+| **Use when** | Files/folders, UI components, org charts | Logging, compression, pricing layers on one object |
 
 ## Summary
 

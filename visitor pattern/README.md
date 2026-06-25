@@ -49,9 +49,19 @@ Avoid it when the hierarchy changes often (every new element requires updating a
 
 ## Related Patterns
 
-- **Composite:** Visitor often traverses composite structures
-- **Iterator:** Used to walk elements before visiting
-- **Interpreter:** Visitors can evaluate expression trees
+| Pattern | Difference |
+|---------|------------|
+| **Composite** | Visitor often traverses composite tree structures |
+| **Iterator** | Walks elements; Visitor performs operations on each via double dispatch |
+| **Interpreter** | Visitors can evaluate or transform expression trees |
+
+### Visitor vs Iterator
+
+| | Visitor | Iterator |
+|---|---------|----------|
+| **Adds** | New operations without changing element classes | Traversal without exposing collection internals |
+| **Dispatch** | Double dispatch (`element.accept(visitor)`) | Single interface (`next()`, `has_next()`) |
+| **Use when** | Many operations on a stable structure (export, tax, print) | Uniform access to items in any collection |
 
 ## Summary
 

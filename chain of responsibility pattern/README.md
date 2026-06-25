@@ -48,9 +48,19 @@ Avoid it when there is always exactly one handler or when guaranteed processing 
 
 ## Related Patterns
 
-- **Decorator:** Similar chaining structure but adds behavior every time
-- **Composite:** Can be part of a chain in tree structures
-- **Command:** Handlers can be command objects
+| Pattern | Difference |
+|---------|------------|
+| **Decorator** | Similar chaining structure but every handler adds behavior; Chain passes until one handler processes the request |
+| **Composite** | Can be part of a chain in tree structures |
+| **Command** | Handlers can encapsulate requests as command objects |
+
+### Chain of Responsibility vs Decorator
+
+| | Chain of Responsibility | Decorator |
+|---|-------------------------|-----------|
+| **Flow** | Request may stop at the first handler that can process it | Every decorator in the chain runs |
+| **Intent** | Find who should handle the request | Layer behavior on one object |
+| **Use when** | Middleware, logging pipelines, support escalation | Wrapping features like compression or logging |
 
 ## Summary
 

@@ -51,9 +51,19 @@ Avoid it when:
 
 ## Related Patterns
 
-- **Factory:** Can return the same Singleton instance
-- **Monostate:** Shares state across instances instead of enforcing one instance
-- **Dependency Injection:** Often preferred over Singleton in modern apps
+| Pattern | Difference |
+|---------|------------|
+| **Factory** | Can return the same Singleton instance as one product type |
+| **Monostate** | Shares state across instances instead of enforcing a single instance |
+| **Dependency Injection** | Often preferred over global Singleton access in modern apps |
+
+### Singleton vs Factory
+
+| | Singleton | Factory |
+|---|-----------|---------|
+| **Controls** | How many instances of one class exist | How products are created and which type is returned |
+| **Scope** | One shared instance for the whole app | Can create many different product instances |
+| **Use when** | A resource must exist exactly once (config, pool) | Creation logic should be centralized and swappable |
 
 ## Summary
 

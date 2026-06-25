@@ -70,3 +70,30 @@ for dir in *pattern*; do echo "=== $dir ===" && (cd "$dir" && python3 main.py); 
 4. **Composite**, **Bridge**, **Flyweight** — structural composition
 5. **State**, **Command**, **Chain of Responsibility**, **Mediator** — behavior and workflows
 6. **Template Method**, **Visitor**, **Memento**, **Interpreter** — advanced specialization
+
+## Commonly Confused Patterns
+
+State and Strategy look almost identical in code — both use a context that delegates to interchangeable objects behind an interface. The difference is **intent and who controls the switch**.
+
+| Aspect | State | Strategy |
+|--------|-------|----------|
+| **Purpose** | Model behavior that changes as the object moves through defined states | Swap one algorithm for another at runtime |
+| **Who changes the active object** | The current state object (or context reacting to events) | The client or context, usually explicitly |
+| **Transitions** | States define valid next states (e.g. idle → has coin) | Strategies are independent; no built-in transitions |
+| **Mental model** | Finite state machine | Pluggable algorithm |
+| **Example** | Vending machine: idle, has coin, dispensing | Checkout: credit card, PayPal, bank transfer |
+
+**Rule of thumb:** If behavior changes because of *what phase the object is in*, use **State**. If behavior changes because the *user or caller picks a different way to do the same task*, use **Strategy**.
+
+Other pairs that are often mixed up:
+
+| Pair | Key difference |
+|------|----------------|
+| **Strategy vs Template Method** | Strategy swaps whole algorithms via composition; Template Method fixes the skeleton in a base class and subclasses override steps via inheritance |
+| **Bridge vs Strategy** | Bridge separates two independent dimensions (abstraction vs implementation); Strategy picks one behavior variant for a single task |
+| **Command vs Strategy** | Command encapsulates a request (often with undo/history); Strategy encapsulates how to perform a task |
+| **Decorator vs Proxy** | Decorator adds responsibilities; Proxy controls access (lazy load, security, remote) |
+| **Adapter vs Facade** | Adapter makes one incompatible interface fit another; Facade simplifies a whole subsystem behind one entry point |
+| **Observer vs Mediator** | Observer broadcasts changes to many listeners; Mediator routes communication through a central hub |
+| **Memento vs Prototype** | Memento saves snapshots for undo/restore; Prototype clones objects to create new instances |
+| **Composite vs Decorator** | Composite groups children into a tree; Decorator wraps one object to add behavior |

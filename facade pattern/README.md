@@ -47,9 +47,19 @@ Avoid it when clients genuinely need fine-grained control over every subsystem d
 
 ## Related Patterns
 
-- **Adapter:** Changes interface to match; Facade simplifies but keeps subsystem intent
-- **Mediator:** Coordinates peer components; Facade is one-directional simplification
-- **Abstract Factory:** Can be used with Facade to hide creation complexity
+| Pattern | Difference |
+|---------|------------|
+| **Adapter** | Changes interface to fit; Facade simplifies but keeps subsystem intent and does not redesign APIs |
+| **Mediator** | Coordinates ongoing peer-to-peer workflows; Facade is a one-way simplification layer |
+| **Abstract Factory** | Can hide creation complexity behind a Facade |
+
+### Facade vs Adapter vs Mediator
+
+| | Facade | Adapter | Mediator |
+|---|--------|---------|----------|
+| **Role** | Simple entry point to a subsystem | Interface translator | Central communication hub |
+| **Direction** | Client → subsystem | Client ↔ adaptee | Colleagues ↔ mediator |
+| **Use when** | Many classes, one easy API needed | One component has the wrong interface | Many objects would otherwise reference each other |
 
 ## Summary
 

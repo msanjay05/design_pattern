@@ -46,9 +46,19 @@ Avoid it when you only create one type of object (use Factory Method or Simple F
 
 ## Related Patterns
 
-- **Factory Method:** Creates one product; Abstract Factory creates families
-- **Builder:** Focuses on step-by-step construction of one complex object
-- **Prototype:** Clones existing objects instead of factory creation
+| Pattern | Difference |
+|---------|------------|
+| **Factory Method** | Creates one product per factory; Abstract Factory creates matched *families* of related products |
+| **Builder** | Assembles one complex object step by step; Abstract Factory returns ready-made related objects |
+| **Prototype** | Clones existing instances instead of building new families from factories |
+
+### Abstract Factory vs Factory Method
+
+| | Abstract Factory | Factory Method |
+|---|------------------|----------------|
+| **Creates** | Families of related products (e.g. Windows UI kit) | One product type per factory subclass |
+| **Client picks** | Which factory (family) to use | Which concrete factory creates the product |
+| **Use when** | Products must stay consistent within a theme or platform | You need one creation point that varies by subclass |
 
 ## Summary
 

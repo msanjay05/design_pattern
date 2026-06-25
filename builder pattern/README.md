@@ -51,9 +51,19 @@ Avoid it when a simple constructor or dataclass is enough.
 
 ## Related Patterns
 
-- **Factory:** Creates objects in one step; Builder assembles in multiple steps
-- **Abstract Factory:** Creates families of related products
-- **Composite:** Often built recursively with a Builder
+| Pattern | Difference |
+|---------|------------|
+| **Factory** | Returns a fully built product in one step; Builder assembles through multiple named steps |
+| **Abstract Factory** | Creates families of related products; Builder focuses on one complex object |
+| **Composite** | Often built recursively; Builder controls how parts are assembled into the final product |
+
+### Builder vs Factory
+
+| | Builder | Factory |
+|---|---------|---------|
+| **Output** | One complex object built incrementally | One product returned when creation finishes |
+| **API style** | `builder.add_part().set_option().build()` | `factory.create_product()` |
+| **Use when** | Many optional parts, validation between steps, readable construction | Simple creation behind an interface |
 
 ## Summary
 

@@ -54,9 +54,19 @@ Avoid it when the extra layer adds complexity without a clear benefit.
 
 ## Related Patterns
 
-- **Decorator:** Adds behavior; Proxy often controls access or defers work
-- **Adapter:** Changes interface; Proxy keeps the same interface
-- **Facade:** Simplifies a subsystem; Proxy represents one object
+| Pattern | Difference |
+|---------|------------|
+| **Decorator** | Adds behavior with the same interface; Proxy controls access or defers work |
+| **Adapter** | Changes interface; Proxy keeps the same interface as the real subject |
+| **Facade** | Simplifies a whole subsystem; Proxy represents and controls one object |
+
+### Proxy vs Decorator
+
+| | Proxy | Decorator |
+|---|-------|-----------|
+| **Focus** | Access control, lazy loading, caching, remote calls | Adding optional features to an object |
+| **Lifecycle** | Often manages when the real object is created | Wraps an existing object immediately |
+| **Use when** | You need a stand-in that gates or delays access | You want stackable behavior layers |
 
 ## Summary
 

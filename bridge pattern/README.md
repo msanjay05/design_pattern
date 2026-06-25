@@ -50,9 +50,19 @@ Avoid it when a simple hierarchy or Strategy is sufficient.
 
 ## Related Patterns
 
-- **Adapter:** Makes existing interfaces work; Bridge designs separation upfront
-- **Strategy:** Similar composition; Bridge focuses on structural decoupling of hierarchies
-- **Abstract Factory:** Can create implementations used by the Bridge
+| Pattern | Difference |
+|---------|------------|
+| **Adapter** | Retrofits existing interfaces; Bridge designs separation between abstraction and implementation from the start |
+| **Strategy** | Picks one behavior variant; Bridge decouples two independent dimensions so both can vary |
+| **Abstract Factory** | Can create implementation objects used by the Bridge |
+
+### Bridge vs Strategy
+
+| | Bridge | Strategy |
+|---|--------|----------|
+| **Splits** | Abstraction hierarchy from implementation hierarchy | Algorithm choice from the context |
+| **Dimensions** | Two axes that evolve independently (e.g. remote × device) | One task, multiple interchangeable ways to do it |
+| **Use when** | Both interface and backend need to vary without combinatorial subclasses | Runtime algorithm swapping for a single operation |
 
 ## Summary
 

@@ -49,9 +49,19 @@ Avoid it for complex languages — use parser generators or dedicated parsing li
 
 ## Related Patterns
 
-- **Composite:** Expression trees are often composites
-- **Visitor:** Can traverse expression trees for evaluation or optimization
-- **Strategy:** Different evaluation strategies for same expression
+| Pattern | Difference |
+|---------|------------|
+| **Composite** | Expression trees are often built as composite structures |
+| **Visitor** | Traverses expression trees for evaluation, optimization, or export |
+| **Strategy** | Swaps evaluation approach; Interpreter defines grammar as an object tree |
+
+### Interpreter vs Visitor vs Strategy
+
+| | Interpreter | Visitor | Strategy |
+|---|-------------|---------|----------|
+| **Models** | Grammar rules as objects | Operations separate from structure | Interchangeable algorithms |
+| **Traversal** | Recursive evaluation of the tree | Double dispatch: element accepts visitor | Direct delegation, no tree required |
+| **Use when** | Small domain-specific languages or rule engines | Many operations over a stable object structure | Picking among algorithm variants |
 
 ## Summary
 

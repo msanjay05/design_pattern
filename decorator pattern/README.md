@@ -47,9 +47,19 @@ Avoid it when behavior combinations are fixed and few (a simple class may suffic
 
 ## Related Patterns
 
-- **Adapter:** Changes interface; Decorator keeps interface and adds behavior
-- **Composite:** Treats trees of objects uniformly; Decorator wraps a single object
-- **Proxy:** Controls access; Decorator adds functionality
+| Pattern | Difference |
+|---------|------------|
+| **Adapter** | Changes interface to make components work together; Decorator keeps interface and adds behavior |
+| **Composite** | Groups children in a tree; Decorator wraps a single object in a chain |
+| **Proxy** | Controls access or defers work; Decorator adds functionality |
+
+### Decorator vs Proxy vs Adapter
+
+| | Decorator | Proxy | Adapter |
+|---|-----------|-------|---------|
+| **Interface** | Same as wrapped object | Same as real subject | Different — translates to what client expects |
+| **Purpose** | Add features (stackable) | Control access (lazy, security, remote) | Make incompatible code work together |
+| **Use when** | Optional layers like logging or encryption | Expensive creation, permissions, remote calls | Integrating legacy or third-party APIs |
 
 ## Summary
 
